@@ -19,7 +19,8 @@ public class Decision1 {
             Scanner scan=new Scanner(System.in);
             choice=scan.nextInt();
 
-        }catch (NoSuchElementException e){System.out.println("Ошибочный символ.");
+        }catch (NoSuchElementException e){
+            System.out.println("Ошибочный символ.");
         }
         return choice;
     }
