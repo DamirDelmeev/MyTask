@@ -21,6 +21,7 @@ public class Decision1 {
 
         }catch (NoSuchElementException e){
             System.out.println("Ошибочный символ.");
+            menu();
         }
         return choice;
     }
@@ -36,15 +37,16 @@ public class Decision1 {
                 break;
 
             case 2 :
+                System.out.println("Введите количество строк,которое вы хотели бы записать.");
                 try{
-                    System.out.println("Введите количество строк,которое вы хотели бы записать.");
                     Scanner scan2=new Scanner(System.in);
                     amount=scan2.nextInt();
-                    if(amount<=0||amount>=100){
+                    if(amount<0||amount>100){
                         System.out.println("Ошибочный символ.Давайте попробуем ещё раз.");
                         amountLine(menu());}
                     else{
                         System.out.println("Количество строк ,которое вы напишите="+amount+".");
+
                     }
                 }catch (NoSuchElementException e){
                     System.out.println("Ошибочный символ.Давайте попробуем ещё раз.");
@@ -73,9 +75,7 @@ public class Decision1 {
                 max= Line.length();
                 min=Line.length();
             }
-            int counterCh=0;
-            for (;counterCh<Line.length();counterCh++){
-            }
+            int counterCh=Line.length();
             if(counterCh<=min){
                 min=counterCh;
                 minLine=Line;}
@@ -89,3 +89,11 @@ public class Decision1 {
     }
 
 }
+/*Унылая пора! Очей очарованье!
+ * Приятна мне твоя прощальная краса —
+ * Люблю я пышное природы увяданье,
+ * В багрец и в золото одетые леса,
+ *
+ * Выходные данные:
+ * MIN (29): Унылая пора! Очей очарованье!
+ * MAX (35): Приятна мне твоя прощальная краса —*/
