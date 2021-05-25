@@ -85,7 +85,7 @@ public class Decision3  {
         System.out.println("Average: "+average);
 
         for(String x:Line)
-            if(x.length()<average)
+            if(x.length()<=average)
             System.out.println("("+x.length()+"): "+x);
 
     }
