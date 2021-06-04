@@ -1,4 +1,4 @@
-package Task8;
+package com.company.Task8;
 
 import java.util.ArrayList;
 import java.util.List;
