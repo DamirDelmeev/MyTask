@@ -13,7 +13,7 @@ public class Decision4 {
         Scanner scan1 = new Scanner(System.in);
         String line = scan1.nextLine();
         String words[] = line.split(" ");
-        String result=null;
+        String result = null;
         int minSymbols = words[0].length();
         for (int i = 0; i < words.length; i++) {
             if (words[i].matches("\\w+\\s*")) {
@@ -23,16 +23,16 @@ public class Decision4 {
                         amountUniqueSymbol--;
                     }
                 }
-                if (amountUniqueSymbol < minSymbols|i==0) {
+                if (amountUniqueSymbol < minSymbols | i == 0) {
                     minSymbols = amountUniqueSymbol;
                     result = (words[i]);
                 }
-            }else {
+            } else {
                 System.out.println("Вы ввели недопустимый символ ,попробуйте ещё раз.");
-                result=wordWithMinimalNumDiffLetters();
+                result = wordWithMinimalNumDiffLetters();
             }
         }
-    return result;
+        return result;
     }
 }
 

@@ -16,16 +16,16 @@ public class Decision8 {
                 wordsAndNumbers[i] = null;
 
             }
-            if (wordsAndNumbers[i]!=null) {
-            String[] interimArray = wordsAndNumbers[i].split("\\D+");
+            if (wordsAndNumbers[i] != null) {
+                String[] interimArray = wordsAndNumbers[i].split("\\D+");
                 for (String s : interimArray) {
                     if (s.matches("[0-9]+")) {
                         NumberList.add(s);
                     }
                 }
+            }
         }
-    }
-        int palindromeCounter =0;
+        int palindromeCounter = 0;
         for (String s : NumberList) {
             if (findPalindrome(s)) {
                 palindromeCounter++;
@@ -34,15 +34,15 @@ public class Decision8 {
                 }
             }
         }
-        if(palindromeCounter==1) {
+        if (palindromeCounter == 1) {
             System.out.println(NumberList.get(0));
         }
     }
 
-    static boolean findPalindrome(String S){
-        int max=S.length()-1;
-        for(int i=0;i<S.length()/2;i++){
-            if(S.charAt(i)!=S.charAt(max-i)){
+    static boolean findPalindrome(String S) {
+        int max = S.length() - 1;
+        for (int i = 0; i < S.length() / 2; i++) {
+            if (S.charAt(i) != S.charAt(max - i)) {
                 return false;
             }
         }

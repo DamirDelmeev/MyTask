@@ -6,49 +6,52 @@ import java.util.Scanner;
 
 public class Decision1 {
     public static void main(String[] args) {
-        Decision1 obj=new Decision1();
+        Decision1 obj = new Decision1();
         obj.amountLine(obj.menu());
         obj.inMaxMin();
     }
-    int choice=0;
-    private int menu(){
-        try{
+
+    int choice = 0;
+
+    private int menu() {
+        try {
             System.out.println("Выберите вариант определяющий количество строк,указав число.");
             System.out.println("1.Рандомное количество строк от 1 до 100.");
             System.out.println("2.Задать число строк самостоятельно.");
-            Scanner scan=new Scanner(System.in);
-            choice=scan.nextInt();
+            Scanner scan = new Scanner(System.in);
+            choice = scan.nextInt();
 
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             System.out.println("Ошибочный символ.");
             menu();
         }
         return choice;
     }
 
-    int amount=0;
-    private int amountLine(int choice){
+    int amount = 0;
 
-        switch (choice){
-            case 1 :
-                Random rnd=new Random();
-                amount= rnd.nextInt(99)+1;
-                System.out.println("Количество строк ,которое вы напишите="+amount+".");
+    private int amountLine(int choice) {
+
+        switch (choice) {
+            case 1:
+                Random rnd = new Random();
+                amount = rnd.nextInt(99) + 1;
+                System.out.println("Количество строк ,которое вы напишите=" + amount + ".");
                 break;
 
-            case 2 :
+            case 2:
                 System.out.println("Введите количество строк,которое вы хотели бы записать.");
-                try{
-                    Scanner scan2=new Scanner(System.in);
-                    amount=scan2.nextInt();
-                    if(amount<0||amount>100){
+                try {
+                    Scanner scan2 = new Scanner(System.in);
+                    amount = scan2.nextInt();
+                    if (amount < 0 || amount > 100) {
                         System.out.println("Ошибочный символ.Давайте попробуем ещё раз.");
-                        amountLine(menu());}
-                    else{
-                        System.out.println("Количество строк ,которое вы напишите="+amount+".");
+                        amountLine(menu());
+                    } else {
+                        System.out.println("Количество строк ,которое вы напишите=" + amount + ".");
 
                     }
-                }catch (NoSuchElementException e){
+                } catch (NoSuchElementException e) {
                     System.out.println("Ошибочный символ.Давайте попробуем ещё раз.");
                     amountLine(menu());
                 }
@@ -62,30 +65,32 @@ public class Decision1 {
         return amount;
     }
 
-    private void inMaxMin(){
-        int counterLine=0;
-        String maxLine=null;
-        String minLine=null;
-        int max=0;
-        int min=0;
+    private void inMaxMin() {
+        int counterLine = 0;
+        String maxLine = null;
+        String minLine = null;
+        int max = 0;
+        int min = 0;
         do {
             Scanner scan3 = new Scanner(System.in);
             String Line = scan3.nextLine();
-            if(counterLine==0){
-                max= Line.length();
-                min=Line.length();
+            if (counterLine == 0) {
+                max = Line.length();
+                min = Line.length();
             }
-            int counterCh=Line.length();
-            if(counterCh<=min){
-                min=counterCh;
-                minLine=Line;}
-            if(counterCh>=max){
-                max=counterCh;
-                maxLine=Line;}
+            int counterCh = Line.length();
+            if (counterCh <= min) {
+                min = counterCh;
+                minLine = Line;
+            }
+            if (counterCh >= max) {
+                max = counterCh;
+                maxLine = Line;
+            }
             counterLine++;
-        }while (counterLine!=amount);
-        System.out.println("Длина минимальной строки="+min+". Строка:'"+minLine+"'");
-        System.out.println("Длина максимальной строки="+max+". Строка:'"+maxLine+"'");
+        } while (counterLine != amount);
+        System.out.println("Длина минимальной строки=" + min + ". Строка:'" + minLine + "'");
+        System.out.println("Длина максимальной строки=" + max + ". Строка:'" + maxLine + "'");
     }
 
 }

@@ -2,11 +2,11 @@ package com.company.Task3;
 
 import java.util.*;
 
-public class Decision3  {
+public class Decision3 {
 
 
     public static void main(String[] args) {
-        Decision3 MyDecision3=new Decision3();
+        Decision3 MyDecision3 = new Decision3();
         MyDecision3.showNumberOfLines(MyDecision3.showMenu());
         MyDecision3.inputLinesAndShowAverage();
 
@@ -14,6 +14,7 @@ public class Decision3  {
     }
 
     private int UserChoice = 0;
+
     int showMenu() {
         System.out.println("Выберите вариант определяющий количество строк,указав число.");
         System.out.println("1.Рандомное количество строк от 1 до 100.");
@@ -29,6 +30,7 @@ public class Decision3  {
     }
 
     private int numberOfLines = 0;
+
     int showNumberOfLines(int UserChoice) {
         switch (UserChoice) {
             case 1:
@@ -65,28 +67,28 @@ public class Decision3  {
     }
 
     void inputLinesAndShowAverage() {
-        String Line[]=new String[numberOfLines];
-        int arrayLength[]=new int[Line.length];
+        String Line[] = new String[numberOfLines];
+        int arrayLength[] = new int[Line.length];
         int counter = 0;
 
         do {
             Scanner scan3 = new Scanner(System.in);
             Line[counter] = scan3.nextLine();
-            arrayLength[counter]=Line[counter].length();
+            arrayLength[counter] = Line[counter].length();
             counter++;
-        }while (counter != numberOfLines) ;
+        } while (counter != numberOfLines);
 
-        int result=0;
-        for (int c:arrayLength){
-            result+=c;
+        int result = 0;
+        for (int c : arrayLength) {
+            result += c;
         }
-        int average=result/arrayLength.length;
+        int average = result / arrayLength.length;
         //System.out.println("Total"+result);
-        System.out.println("Average: "+average);
+        System.out.println("Average: " + average);
 
-        for(String x:Line)
-            if(x.length()<=average)
-            System.out.println("("+x.length()+"): "+x);
+        for (String x : Line)
+            if (x.length() <= average)
+                System.out.println("(" + x.length() + "): " + x);
 
     }
 }

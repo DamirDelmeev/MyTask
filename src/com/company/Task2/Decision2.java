@@ -2,7 +2,7 @@ package com.company.Task2;
 
 import java.util.*;
 
-public class Decision2 implements Comparator<String>  {
+public class Decision2 implements Comparator<String> {
 
 
     public static void main(String[] args) {
@@ -13,6 +13,7 @@ public class Decision2 implements Comparator<String>  {
     }
 
     private int UserChoice = 0;
+
     int showMenu() {
         System.out.println("Выберите вариант определяющий количество строк,указав число.");
         System.out.println("1.Рандомное количество строк от 1 до 100.");
@@ -28,6 +29,7 @@ public class Decision2 implements Comparator<String>  {
     }
 
     private int numberOfLines = 0;
+
     int showNumberOfLines(int UserChoice) {
         switch (UserChoice) {
             case 1:
@@ -64,26 +66,26 @@ public class Decision2 implements Comparator<String>  {
     }
 
     void inputLines() {
-        String Line[]=new String[numberOfLines];
+        String Line[] = new String[numberOfLines];
         int counter = 0;
         do {
             Scanner scan3 = new Scanner(System.in);
             Line[counter] = scan3.nextLine();
             counter++;
-        }while (counter != numberOfLines) ;
+        } while (counter != numberOfLines);
 
-        Arrays.sort(Line,new Decision2());
+        Arrays.sort(Line, new Decision2());
         /*Arrays.sort(Line, (i1, i2) -> i1.length() == i2.length()
         ? i1.compareTo(i2) : Integer.compare(i1.length(), i2.length()));*/
-        for(String x:Line)
-            System.out.println("("+x.length()+"): "+x);
+        for (String x : Line)
+            System.out.println("(" + x.length() + "): " + x);
 
     }
 
     public int compare(String o1, String o2) {
-        if(o1.length()==o2.length()){
+        if (o1.length() == o2.length()) {
             return o1.compareTo(o2);
         }
-        return Integer.compare(o1.length(),o2.length());
+        return Integer.compare(o1.length(), o2.length());
     }
-    }
+}
