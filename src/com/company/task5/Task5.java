@@ -1,4 +1,4 @@
-package com.company.Task5;
+package com.company.task5;
 
 public class Task5 {
 

@@ -1,16 +1,15 @@
-package com.company.Task3;
+package com.company.task2;
 
 import java.util.*;
 
-public class Decision3 {
+public class Decision2 implements Comparator<String> {
 
 
     public static void main(String[] args) {
-        Decision3 MyDecision3 = new Decision3();
-        MyDecision3.showNumberOfLines(MyDecision3.showMenu());
-        MyDecision3.inputLinesAndShowAverage();
+        Decision2 MyDecision = new Decision2();
 
-
+        MyDecision.showNumberOfLines(MyDecision.showMenu());
+        MyDecision.inputLines();
     }
 
     private int UserChoice = 0;
@@ -66,30 +65,27 @@ public class Decision3 {
         return numberOfLines;
     }
 
-    void inputLinesAndShowAverage() {
+    void inputLines() {
         String Line[] = new String[numberOfLines];
-        int arrayLength[] = new int[Line.length];
         int counter = 0;
-
         do {
             Scanner scan3 = new Scanner(System.in);
             Line[counter] = scan3.nextLine();
-            arrayLength[counter] = Line[counter].length();
             counter++;
         } while (counter != numberOfLines);
 
-        int result = 0;
-        for (int c : arrayLength) {
-            result += c;
-        }
-        int average = result / arrayLength.length;
-        //System.out.println("Total"+result);
-        System.out.println("Average: " + average);
-
+        Arrays.sort(Line, new Decision2());
+        /*Arrays.sort(Line, (i1, i2) -> i1.length() == i2.length()
+        ? i1.compareTo(i2) : Integer.compare(i1.length(), i2.length()));*/
         for (String x : Line)
-            if (x.length() <= average)
-                System.out.println("(" + x.length() + "): " + x);
+            System.out.println("(" + x.length() + "): " + x);
 
     }
-}
 
+    public int compare(String o1, String o2) {
+        if (o1.length() == o2.length()) {
+            return o1.compareTo(o2);
+        }
+        return Integer.compare(o1.length(), o2.length());
+    }
+}

@@ -1,6 +1,4 @@
-package com.company.Task9;
-
-import java.util.Scanner;
+package com.company.task9;
 
 public class Task9 {
 

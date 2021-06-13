@@ -1,4 +1,4 @@
-package com.company.Task7;
+package com.company.task7;
 
 import java.util.ArrayList;
 import java.util.Scanner;
