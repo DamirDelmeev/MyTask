@@ -1,14 +1,8 @@
 package com.company.task13;
 
-import java.util.Scanner;
-
 public class Task13 {
     public static void main(String[] args) {
-       Scanner scan1= new Scanner(System.in);
-       int x=scan1.nextInt();
-       System.out.println(x);
-       //Number c=scan1.nextInt();
-       //System.out.println(c);
+
     }
 }
 
