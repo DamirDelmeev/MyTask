@@ -10,7 +10,7 @@ public class Decision13 {
             System.out.println("Матрица такого размера недопустима.");
         } else {
             System.out.println("Введите число на которое будет совершён циклический сдвиг матрицы.");
-            new Decision13().printNewMartix(matrix);
+            new Decision13().printNewMatrix(matrix);
         }
     }
 
@@ -31,27 +31,13 @@ public class Decision13 {
         return matrix;
     }
 
-    private void printNewMartix(int[][] matrix) {
+    private void printNewMatrix(int[][] matrix) {
         Scanner scan2 = new Scanner(System.in);
         int variableChange = scan2.nextInt();
         for (int row = 0; row < matrix.length; ++row) {
             int newRow = (matrix.length + row - variableChange) % matrix.length;
             for (int col = 0; col < matrix.length; ++col) {
                 System.out.print(matrix[newRow][col] + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    private void toString(int[][] array) {
-        for (int[] matrix : array) {
-            for (int cow = 0; cow < array.length; cow++) {
-                if (matrix[cow] >= 0) {
-                    System.out.print(" " + matrix[cow] + " ");
-
-                } else {
-                    System.out.print(matrix[cow] + " ");
-                }
             }
             System.out.println();
         }
