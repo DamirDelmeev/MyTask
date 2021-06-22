@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Decision15 {
     public static void main(String[] args) {
-        int dimension=0;
+        int dimension = 0;
         do {
             Scanner scan1 = new Scanner(System.in);
             System.out.println("Введите размерность матрицы.");
