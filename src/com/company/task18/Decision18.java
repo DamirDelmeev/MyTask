@@ -36,8 +36,7 @@ public class Decision18 {
             }
         }
         if (userMatrix.length - iSet.size() == 0 | userMatrix.length - jSet.size() == 0) {
-            Integer newMatrix[][] = null;
-            return newMatrix;
+            return null;
         }
         System.out.println("Количество строк новой матрицы: " + (userMatrix.length - iSet.size()));
         System.out.println("Количество столбцов новой матрицы: " + (userMatrix.length - jSet.size()));
