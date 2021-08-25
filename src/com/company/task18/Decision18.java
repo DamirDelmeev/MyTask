@@ -13,7 +13,7 @@ public class Decision18 {
             if (newMatrix != null) {
                 toString(newMatrix);
             } else {
-                System.out.print("Единственный элемент матрицы: "+userMatrix[0][0]);
+                System.out.print("Единственный элемент матрицы: " + userMatrix[0][0]);
             }
         } else {
             toString(userMatrix);
