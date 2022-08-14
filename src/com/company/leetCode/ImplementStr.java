@@ -4,8 +4,9 @@ public class ImplementStr {
     public static void main(String[] args) {
 
         ImplementStr implementStr = new ImplementStr();
-        System.out.println(implementStr.strStr("hello","ll"));
+        System.out.println(implementStr.strStr("hello", "ll"));
     }
+
     public int strStr(String haystack, String needle) {
         return haystack.indexOf(needle);
     }
